@@ -10,6 +10,7 @@ The design is **extensible** — you can customize the chunk-processing logic (e
 ## ✨ Features
 - Efficient **chunked reading** from S3 (does not load the full file into memory).
 - Parallel processing of chunks using configurable worker threads.
+- **Line-Safe Splitting** – Chunks are carefully aligned on line boundaries, **guaranteeing no overlap and no missing lines**. Every line in the source file is processed exactly once.  
 - **Multipart upload** to S3 (supports files >5MB).
 - Configurable chunking by **line count** or **byte size**.
 - Extensible hook for custom processing (transform, enrich, validate).
